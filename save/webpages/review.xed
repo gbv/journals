@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MyCoReWebPage>
+  <section xml:lang="all" title="review">
+    <xed:form xmlns:xed="http://www.mycore.de/xeditor" role="form" class="form-horizontal">
+      <xed:source uri="xslStyle:recensionMail:mcrobject:{$id}" />
+      <xed:bind xpath="review">
+        <div class="container-fluid">
+          <div class="row">
+            <p>
+              <label for="title"><xed:output i18n="mir.search.title" /></label>
+              <xed:output value="titles/title" />
+            </p>
+            <br />
+          </div>
+          <div class="row">
+            <p>
+              <label for="author"><xed:output i18n="mir.role.author" /></label>
+              <xed:output value="authors/author" />
+            </p>
+            <p>
+              <label for="publisher"><xed:output i18n="mir.role.publisher" /></label>
+              <xed:output value="originInfo/publisher" />
+              <br/>
+              <label for="year"><xed:output i18n="mir.search.year" /></label>
+              <xed:output value="originInfo/date" />
+            </p>
+            <p>
+              <label for="pages"><xed:output i18n="mir.pages" /></label>
+              <xed:output value="physicalDescription/extent" />
+            </p>
+            <p>
+              <label for="price"><xed:output i18n="mir.price" /></label>
+              <xed:output value="notes/note" />
+            </p>
+            <!--<button type="submit" xed:target="debug">Debug</button>   for tests to the structure of the XML-->
+          </div>
+          <div class="row">
+            <p>
+              <xed:output value="note" />
+            </p>
+            <br />
+          </div>
+        </div>
+        <input type="hidden" name="xsl" value="review" />
+        <xed:bind xpath="link">
+        <input type="hidden" name="goto" />
+        </xed:bind>
+        <div class="container-fluid">
+          <div class="form-group">
+            <label><xed:output i18n="mir.relatedItem.review.request" /></label>
+            <xed:bind xpath="name">
+              <div class="form-group {$xed-validation-marker}">
+                <label for="name" class="col-sm-2 control-label">
+                  <xed:output
+                    i18n="editor.search.mir.name" />
+                </label>
+                <div class="col-sm-10">
+                  <input id="name" type="text" class="form-control"
+                         placeholder="{i18n:editor.search.mir.name}" />
+                  <xed:validate required="true" display="here">
+                    <xed:output i18n="selfRegistration.realName.required" />
+                  </xed:validate>
+                </div>
+              </div>
+            </xed:bind>
+            <xed:bind xpath="from">
+              <div class="form-group {$xed-validation-marker}">
+                <label for="mail" class="col-sm-2 control-label">
+                  <xed:output i18n="mir.mail" />
+                </label>
+                <div class="col-sm-10">
+                  <input id="mail" type="email" class="form-control"
+                         placeholder="{i18n:mir.mail}" />
+                  <xed:validate required="true" display="here">
+                    <xed:output i18n="selfRegistration.mail.required" />
+                  </xed:validate>
+                </div>
+              </div>
+            </xed:bind>
+            <xed:bind xpath="body">
+              <div class="form-group">
+                <label for="other" class="col-sm-2 control-label">
+                  <xed:output i18n="mir.namePart.other" />
+                </label>
+                <div class="col-sm-10">
+                  <textarea id="other" class="form-control" rows="3" />
+                </div>
+              </div>
+            </xed:bind>
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <button class="btn btn-primary" type="submit" xed:target="servlet"
+                        xed:href="MCRMailer">
+                  <xed:output i18n="button.send" />
+                </button>
+                <xed:cancel url="/receive/{$id}" />
+                <button class="btn btn-danger" type="submit" xed:target="cancel">
+                  <xed:output i18n="button.cancel" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </xed:bind>
+    </xed:form>
+  </section>
+</MyCoReWebPage>
