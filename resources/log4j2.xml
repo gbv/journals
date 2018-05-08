@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration status="OFF">
   <appenders>
-    <RollingFile name="RollingFile" fileName="/var/log/tomcat8/mir_karten.log"
-      filePattern="/var/log/tomcat8/$${date:yyyy-MM}/mir_karten-%d{MM-dd-yyyy}-%i.log.gz">
+    <RollingFile name="RollingFile" fileName="/mcr/journals/log/journals_mir.log"
+      filePattern="/mcr/journals/log/$${date:yyyy-MM}/journals_mir-%d{MM-dd-yyyy}-%i.log.gz">
       <PatternLayout>
         <Pattern>%highlight{%d{ISO8601} %-5p %X{loginId} %c{1}: %m%n%ex}</Pattern>
       </PatternLayout>

@@ -19,10 +19,10 @@
       </div>
       <div id="project_logo_box">
         <img src="{$WebApplicationBaseURL}/images/GBV.png" class="GBV" />
-        <span id="gbv-name"><a href="{concat($WebApplicationBaseURL,substring($loaded_navigation_xml/@hrefStartingPage,2),$HttpSession)}"
-           class="project_name">Kartenrepositorium</a></span>
+     <!--   <span id="gbv-name"><a href="{concat($WebApplicationBaseURL,substring($loaded_navigation_xml/@hrefStartingPage,2),$HttpSession)}"
+                               class="project_name">Zeitschriftenserver</a></span>-->
       </div>
-      <div id="gbv"></div>
+      <!--<div id="gbv"></div>-->
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
