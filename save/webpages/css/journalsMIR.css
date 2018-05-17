@@ -62,7 +62,8 @@ html body header #header_box #project_logo_box a {
   font-family: Calibri;
   font-size: 25px;
   font-weight: 300;
-  margin-left: 40px;
+  //margin-left: 40px;
+  display: block;
 }
 
 .mir-prop-nav .navbar-nav > li > a .caret {

@@ -19,6 +19,9 @@
       </div>
       <div id="project_logo_box">
         <img src="{$WebApplicationBaseURL}/images/GBV.png" class="GBV" />
+        <span id="gbv-name">
+          <a class="project_name" href="{$WebApplicationBaseURL}content/index.xml">Rezensionsangebote</a>
+        </span>
      <!--   <span id="gbv-name"><a href="{concat($WebApplicationBaseURL,substring($loaded_navigation_xml/@hrefStartingPage,2),$HttpSession)}"
                                class="project_name">Zeitschriftenserver</a></span>-->
       </div>
@@ -55,8 +58,14 @@
 
         <nav class="collapse navbar-collapse mir-main-nav-entries">
           <ul class="nav navbar-nav pull-left">
-            <xsl:apply-templates select="$loaded_navigation_xml/menu[@id='search']" />
-            <xsl:apply-templates select="$loaded_navigation_xml/menu[@id='browse']" />
+            <li>
+              <a href="http://esx-155.gbv.de/journals/receive/jportal_jpjournal_00000003">
+                <i class="fa fa-reply" aria-hidden="true"></i>
+                Zeitschriftenserver der VZG
+              </a>
+            </li>
+            <!--<xsl:apply-templates select="$loaded_navigation_xml/menu[@id='search']" />
+            <xsl:apply-templates select="$loaded_navigation_xml/menu[@id='browse']" />-->
             <xsl:apply-templates select="$loaded_navigation_xml/menu[@id='publish']" />
             <xsl:call-template name="mir.basketMenu" />
           </ul>
