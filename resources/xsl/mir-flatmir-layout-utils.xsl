@@ -59,7 +59,7 @@
         <nav class="collapse navbar-collapse mir-main-nav-entries">
           <ul class="nav navbar-nav pull-left">
             <li>
-              <a href="http://esx-155.gbv.de/journals/receive/jportal_jpjournal_00000003">
+              <a href="http://journals.gbv.de/journals/receive/jportal_jpjournal_00000003">
                 <i class="fa fa-reply" aria-hidden="true"></i>
                 Zeitschriftenserver der VZG
               </a>
